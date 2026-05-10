@@ -6,6 +6,8 @@ import morgan from 'morgan';
 dotenv.config()
 const app = express()
 
+app.use(morgan('common'))
+
 const PORT = process.env.PORT
 
 app.get('/',(req:Request, res:Response) => {
