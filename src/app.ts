@@ -136,3 +136,7 @@ api.delete('/:number', async (req: Request, res: Response) => {
 });
 
 app.use('/api', api);
+
+// Vercel zero-config Express: file ini dideteksi otomatis dan
+// memerlukan Express app sebagai default export.
+export default app;
