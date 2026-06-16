@@ -1,22 +1,23 @@
 {
-  "name": "api",
+  "name": "iot-test-server",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Simple CRUD service backed by Upstash Redis for IoT/GSM POST testing",
+  "main": "src/server.ts",
   "scripts": {
-    "dev": "nodemon src/server.ts",
-    "dev:log": "nodemon src/server.ts >> logs/http.log",
-    "build":"tsc",
-    "start":"node dist/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "packageManager": "pnpm@11.0.9",
   "type": "module",
+  "pnpm": {
+    "onlyBuiltDependencies": ["esbuild"]
+  },
   "dependencies": {
-    "@prisma/client": "^7.8.0",
+    "@upstash/redis": "^1.35.0",
     "express": "^5.2.1",
     "morgan": "^1.10.1"
   },
@@ -26,8 +27,7 @@
     "@types/node": "^25.6.2",
     "dotenv": "^17.4.2",
     "nodemon": "^3.1.14",
-    "prisma": "^7.8.0",
-    "ts-node": "^10.9.2",
+    "tsx": "^4.22.4",
     "typescript": "^6.0.3"
   }
 }
