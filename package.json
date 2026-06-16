@@ -4,8 +4,8 @@
   "description": "Simple CRUD service backed by Upstash Redis for IoT/GSM POST testing",
   "main": "src/server.ts",
   "scripts": {
-    "dev": "tsx watch src/server.ts",
     "build": "tsc",
+    "dev": "tsc && node dist/server.js",
     "start": "node dist/server.js"
   },
   "keywords": [],
@@ -13,9 +13,6 @@
   "license": "ISC",
   "packageManager": "pnpm@11.0.9",
   "type": "module",
-  "pnpm": {
-    "onlyBuiltDependencies": ["esbuild"]
-  },
   "dependencies": {
     "@upstash/redis": "^1.35.0",
     "express": "^5.2.1",
@@ -26,8 +23,6 @@
     "@types/morgan": "^1.9.10",
     "@types/node": "^25.6.2",
     "dotenv": "^17.4.2",
-    "nodemon": "^3.1.14",
-    "tsx": "^4.22.4",
     "typescript": "^6.0.3"
   }
 }
